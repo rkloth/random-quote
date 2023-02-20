@@ -1,7 +1,3 @@
-import deepai from 'deepai';
-
-deepai.setApiKey(import.meta.env.VITE_DEEPAI_API_KEY);
-
 export default {
   GenerateImage: {
     Start: text => {
