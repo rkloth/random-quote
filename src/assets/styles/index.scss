@@ -1,0 +1,50 @@
+:root {
+  --inter: 'Inter', sans-serif;
+  --space-mono: 'Space Mono', monospace;
+  --space-grotesk: 'Space Grotesk', sans-serif;
+
+  --space-05: 0.5em;
+  --space-1: 1em;
+  --space-2: 2em;
+  --space-3: 3em;
+  --space-4: 4em;
+  --space-5: 5em;
+  --space-6: 6em;
+
+  --border-radius: 9px;
+  --bezier: cubic-bezier(0.04, 1.8, 0.33, 1);
+  --bezier-2: cubic-bezier(0.04, 1, 0.33, 1);
+
+  --secondary: #111111;
+
+  --primary: #222222;
+  --primary-500: #232323;
+  --primary-600: #282828;
+  --primary-700: #3a3a3a;
+  --primary-800: #878787;
+  --primary-900: #b0b1b3;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  cursor: none;
+}
+
+html,
+body,
+#root {
+  font-family: var(--inter);
+  font-size: 24px;
+
+  background-color: var(--secondary);
+  color: var(--primary-900);
+  width: 100vw;
+  height: 100vh;
+
+  cursor: none;
+}

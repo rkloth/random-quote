@@ -1,0 +1,24 @@
+.painting {
+  position: absolute;
+  display: block;
+
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-65%, -50%);
+
+  width: 512px;
+  height: 768px;
+
+  background-color: dodgerblue;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition: background-image 0.5s ease-in-out;
+
+  box-shadow: 0 2px 40px rgba(black, 0.5), 0 2px 60px rgba(black, 0.4),
+    0 2px 90px rgba(black, 0.3);
+
+  border-radius: 3px;
+}
