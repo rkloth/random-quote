@@ -5,20 +5,22 @@ deepai.setApiKey(import.meta.env.VITE_DEEPAI_API_KEY);
 export default {
   GenerateImage: {
     Start: text => {
-      console.log('text', text);
-      console.log('api key', import.meta.env.VITE_DEEPAI_API_KEY);
-      if (import.meta.env.VITE_USE_DEEPAI == 'true') {
-        console.log('calling stable diffusion api', text);
+      console.log('calling deep ai with', text);
 
-        return deepai.callStandardApi('stable-diffusion', {
-          text,
-          width: '512',
-          height: '768',
-          grid_size: '1',
-        });
-      } else {
-        return false;
-      }
+      const form = new FormData();
+      form.append('text', text);
+      form.append('width', '512');
+      form.append('height', '768');
+      form.append('grid_size', '1');
+
+      return fetch('https://api.deepai.org/api/stable-diffusion', {
+        method: 'POST',
+        headers: {
+          'Api-Key': import.meta.env.VITE_DEEPAI_API_KEY,
+          'client-library': 'deepai-js-client',
+        },
+        body: form,
+      });
     },
   },
 };
