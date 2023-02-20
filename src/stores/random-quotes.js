@@ -1,3 +1,8 @@
+import { ArtStyles } from '@constants/art-styles';
+import { useImageStore } from '@stores/images';
+import { useQuoteStore } from '@stores/quotes';
+import { useTagStore } from '@stores/tags';
+import { sample } from 'lodash';
 /* random-quotes store saves the quotes and images
    which are bound by a correlation id.
 
@@ -6,13 +11,6 @@
 */
 
 import { create } from 'zustand';
-import { sample } from 'lodash';
-
-import { useQuoteStore } from '@stores/quotes';
-import { useImageStore } from '@stores/images';
-import { useTagStore } from '@stores/tags';
-
-import { ArtStyles } from '@constants/art-styles';
 
 const useRandomQuotesStore = create((set, get) => ({
   randomQuotes: [],
@@ -57,7 +55,9 @@ const useRandomQuotesStore = create((set, get) => ({
     const image = await useImageStore
       .getState()
       .generateImage(
-        `the concept of ${tag} in the painting style of ${sample(ArtStyles)}`
+        `the concept of ${tag.slug} in the painting style of ${sample(
+          ArtStyles
+        )}`
       );
 
     console.log('received quote', quote);

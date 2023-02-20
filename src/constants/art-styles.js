@@ -18,7 +18,7 @@
 const ArtStyles = [
   'abstract',
   'abstract expressionism',
-  'academic',
+  'academic', // y
   'action painting',
   'art nouveau',
   'art deco',
