@@ -23,5 +23,6 @@ export const useCurrentRandomQuote = () => {
   return {
     quote: quotes.find(quote => quote._id === quoteId),
     image: images.find(image => image.id === imageId),
+    index: currentQuotePairIndex,
   };
 };

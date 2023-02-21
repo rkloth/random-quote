@@ -9,55 +9,41 @@ import { useCurrentRandomQuote } from '@hooks/use-current-random-quote';
 import { useRandomQuoteNavigation } from '@hooks/use-random-quote-navigation';
 
 export default function RandomQuote() {
-  const { quote, image } = useCurrentRandomQuote();
+  const { quote, image, index } = useCurrentRandomQuote();
   const { create, isCreating, previous, next } = useRandomQuoteNavigation();
 
   useEffect(() => {
     create();
   }, []);
 
-  const renderImage = () => {
-    if (image) {
-      return <Painting image={image} />;
-    } else {
-      return <p>Loading Image..</p>;
-    }
-  };
-
-  const renderBackdrop = () => {
-    if (image) {
-      return <Backdrop image={image} />;
-    } else {
-      return <p>Loading backdrop..</p>;
-    }
-  };
-
-  const renderQuote = () => {
-    if (quote) {
-      return <p className="the-quote">{quote.content}</p>;
-    } else {
-      return <p>Loading Quote..</p>;
-    }
-  };
-
   return (
     <div id="random-quote-page">
-      {renderBackdrop()}
-      {renderImage()}
-      <div style={{ position: 'relative', height: '100%', width: '100%' }}>
-        {renderQuote()}
+      {image && <Backdrop image={image} />}
 
-        {isCreating && <p>Creating new quote..</p>}
-        <button onClick={previous} disabled={isCreating}>
-          previous
-        </button>
-        <button onClick={next} disabled={isCreating}>
-          next
-        </button>
+      <div className="random-quote-content">
+        <p className="index">{index + 1 < 10 ? `0${index + 1}` : index + 1}</p>
 
-        <button onClick={create} disabled={isCreating}>
-          Create
-        </button>
+        {image && <Painting image={image} />}
+        <div className="quote">
+          {quote && <p className="the-quote">{quote.content}</p>}
+          {quote && <p className="the-author">{quote.author}</p>}
+        </div>
+      </div>
+
+      <div className="random-quote-footer">
+        <div>
+          {isCreating && <p>Creating new quote..</p>}
+          <button onClick={previous} disabled={isCreating}>
+            previous
+          </button>
+          <button onClick={next} disabled={isCreating}>
+            next
+          </button>
+
+          <button onClick={create} disabled={isCreating}>
+            Create
+          </button>
+        </div>
       </div>
     </div>
   );
