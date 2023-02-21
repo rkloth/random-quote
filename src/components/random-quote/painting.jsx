@@ -1,7 +1,7 @@
-import '@styles/components/random-quote/painting.scss';
+/* import '@styles/components/random-quote/painting.scss';
+ */
+import styled from 'styled-components';
 
-// import styled from 'styled-components';
-/*
 const Painting = styled.div`
   position: relative;
   display: block;
@@ -28,9 +28,8 @@ Painting.defaultProps = {
   },
 };
 
-
-export default Painting; */
-
+export default Painting;
+/*
 export default function Painting({ image }) {
   return (
     <div
@@ -41,3 +40,4 @@ export default function Painting({ image }) {
     />
   );
 }
+ */

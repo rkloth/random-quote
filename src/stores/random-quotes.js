@@ -18,7 +18,7 @@ const useRandomQuotesStore = create((set, get) => ({
 
   isCreating: false,
 
-  setCurrent: indexOfCurrent => {
+  select: indexOfCurrent => {
     set({ indexOfCurrent });
   },
 
@@ -66,7 +66,12 @@ const useRandomQuotesStore = create((set, get) => ({
     set(state => ({
       randomQuotes: [
         ...state.randomQuotes,
-        { quoteId: quote._id, imageId: image.id, tag },
+        {
+          quoteId: quote._id,
+          imageId: image.id,
+          tag,
+          originalIndex: state.randomQuotes.length,
+        },
       ],
       indexOfCurrent: state.randomQuotes.length,
       isCreating: false,

@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 
 import Painting from '@components/random-quote/painting';
 import Backdrop from '@components/random-quote/backdrop';
+import Gallery from '@components/gallery/gallery';
 
 import { useCurrentRandomQuote } from '@hooks/use-current-random-quote';
 import { useRandomQuoteNavigation } from '@hooks/use-random-quote-navigation';
@@ -23,7 +24,7 @@ export default function RandomQuote() {
       <div className="random-quote-content">
         <p className="index">{index + 1 < 10 ? `0${index + 1}` : index + 1}</p>
 
-        {image && <Painting image={image} />}
+        {image && <Painting image={image} className="ml-3 mr-3" />}
         <div className="quote">
           {quote && <p className="the-quote">{quote.content}</p>}
           {quote && <p className="the-author">{quote.author}</p>}
@@ -31,6 +32,7 @@ export default function RandomQuote() {
       </div>
 
       <div className="random-quote-footer">
+        <Gallery />
         <div>
           {isCreating && <p>Creating new quote..</p>}
           <button onClick={previous} disabled={isCreating}>
