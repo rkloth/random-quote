@@ -94,7 +94,7 @@ button {
   padding: 0.65em 0.9em 0.7em 0.9em;
 
   color: white;
-  background-color: rgba(white, 0.2);
+  background-color: rgba(white, 0.05);
   border-radius: var(--border-radius);
   border: none;
 
@@ -104,7 +104,7 @@ button {
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(white, 0.3);
+    background-color: rgba(white, 0.2);
   }
 
   p {

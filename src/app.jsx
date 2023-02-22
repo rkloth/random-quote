@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { useRandomQuotesStore } from '@stores/random-quotes';
 
 import '@styles/app.scss';
-import logo from '@/assets/images/rk-logo-animate.gif';
 
 function App() {
   const { isTagsLoaded, fetchTags } = useTagsLoader();
@@ -23,7 +22,7 @@ function App() {
   if (!isTagsLoaded || !randomQuotes.length)
     return (
       <div className="loading-screen">
-        <img src={logo} alt="loading" />
+        <h2>loading</h2>
       </div>
     );
   return (
