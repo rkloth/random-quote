@@ -12,8 +12,6 @@ export const useQuoteStore = create(set => ({
       const response = await Quotable.RandomQuote.Load(tag);
       const data = await response.json();
 
-      console.log('in store: received quote', data);
-
       set(state => ({
         quotes: [...state.quotes, data],
       }));

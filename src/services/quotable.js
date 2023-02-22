@@ -1,10 +1,10 @@
-const baseURL = 'https://api.quotable.io';
+const baseURL = import.meta.env.VITE_QUOTABLE_BASE_URL;
 
 export default {
   RandomQuote: {
     Load: (tag = 'love') => {
       const searchParams = new URLSearchParams({ tags: tag });
-      return fetch(`${baseURL}/random?${searchParams.toString()}`);
+      return fetch(`${baseURL}/random?${searchParams}`);
     },
   },
   Tags: {

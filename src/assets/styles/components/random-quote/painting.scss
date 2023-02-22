@@ -3,9 +3,8 @@
   display: block;
 
   aspect-ratio: 512 / 768;
-  min-width: 409.6px;
-  max-width: 409.6px;
-  width: 100%;
+
+  border-radius: 3px;
 
   background-color: dodgerblue;
   background-position: center;
@@ -13,6 +12,4 @@
   background-size: cover;
 
   transition: background-image 0.5s ease-in-out;
-
-  border-radius: 3px;
 }

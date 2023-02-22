@@ -4,4 +4,21 @@
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
+  cursor: none;
+}
+
+.loading-screen {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #181818;
+
+  img {
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }

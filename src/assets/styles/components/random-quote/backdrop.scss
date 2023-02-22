@@ -1,16 +1,15 @@
 $backdrop-scale: 5;
 
-.backdrop-container {
-  position: absolute;
-  display: block;
-
-  height: 100%;
-  width: 100%;
-
-  margin: 0 auto;
-  overflow: hidden;
-
-  background-color: rgb(45, 45, 45);
+@keyframes backdrop-animation {
+  0% {
+    left: 75%;
+  }
+  50% {
+    left: 25%;
+  }
+  100% {
+    left: 75%;
+  }
 }
 
 .backdrop {
@@ -18,17 +17,24 @@ $backdrop-scale: 5;
   display: block;
 
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale($backdrop-scale);
+  left: 75%;
+  transform: translate(-50%, -50%) scale(5);
 
-  width: 512px;
-  height: 768px;
+  width: 768px;
+  height: 1520px;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(25px) opacity(0.8);
+
+  filter: blur(20px);
+  opacity: 0.4;
 
   z-index: 0;
   transition: background-image 0.5s ease-in-out;
+
+  animation-name: backdrop-animation;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }

@@ -1,16 +1,93 @@
+@mixin circle {
+  width: 8em;
+  height: 8em;
+
+  border-radius: 50%;
+  background-color: black;
+
+  pointer-events: all;
+}
+
+@mixin big-blurry-circle {
+  width: 8em;
+  height: 8em;
+
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+
+  pointer-events: all;
+}
+
 .cursor {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
 
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-
-  border: 2px solid var(--primary-900);
+  width: fit-content;
+  height: fit-content;
 
   z-index: 9999;
+
   pointer-events: none;
   overflow: hidden;
+  user-select: none;
+
+  transition: background-color 0.5s var(--bezier), width 0.5s var(--bezier),
+    height 0.5s var(--bezier), border-radius 0.5s var(--bezier),
+    border 0.5s var(--bezier);
+
+  &.previous {
+    @include big-blurry-circle;
+  }
+
+  &.next {
+    @include big-blurry-circle;
+  }
+
+  &.create {
+    @include circle;
+  }
+
+  &.default {
+    width: 0.5em;
+    height: 0.5em;
+
+    border-radius: 50%;
+    background-color: white;
+  }
+}
+
+.create-cursor {
+  position: relative;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+
+  background-color: red;
+}
+
+.quote-preview-cursor {
+  position: relative;
+
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .content {
+    position: relative;
+
+    font-family: var(--space-grotesk);
+    font-size: 3rem;
+    font-weight: 700;
+
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 0.6em;
+  }
 }

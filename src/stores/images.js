@@ -10,8 +10,6 @@ export const useImageStore = create(set => ({
   generateImage: async text => {
     set({ isLoading: true });
     try {
-      console.log('generating image in store', text);
-
       const response = await DeepAI.GenerateImage.Start(text);
       const { id, output_url } = await response.json();
 
@@ -19,8 +17,6 @@ export const useImageStore = create(set => ({
       const data = await getBase64FromURL(output_url);
 
       const image = { id, data, extension };
-
-      console.log('received generated image in store', image);
 
       set(state => ({
         images: [...state.images, image],

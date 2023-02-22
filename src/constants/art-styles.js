@@ -1,62 +1,20 @@
-// create an array of art styles
-
-/* const ArtStyles = [
-  'expressionism',
+/* art styles that go well with the app design */
+export const ArtStyles = [
+  'academic',
   'baroque',
   'dada',
   'futurism',
-  'modernism',
-  'neo-impressionism',
-  'neo-classicism',
-  'post-impressionism',
-  'rococo',
-  'surrealism',
-  'suprematism',
-  'Zero Group',
-];
- */
-const ArtStyles = [
-  'abstract',
-  'abstract expressionism',
-  'academic', // y
-  'action painting',
-  'art nouveau',
-  'art deco',
-  'baroque',
-  'color field painting',
-  'cubism',
-  'dada',
-  'de stijl',
-  'early renaissance',
-  'expressionism',
-  'fauvism',
-  'folk art',
   'futurism',
   'high renaissance',
   'impressionism',
-  'installation art',
-  'land art',
-  'magic realism',
-  'minimalism',
-  'modernism',
-  'naïve art',
   'neoclassicism',
-  'op art',
-  'pop art',
-  'post-impressionism',
-  'postmodernism',
-  'pre-raphaelite',
-  'realism',
   'rococo',
   'romanticism',
   'surrealism',
   'symbolism',
   'synchromism',
+  'suprematism',
   'ukiyo-e',
   'venetian school',
   'victorian',
-  'western art',
-  'yamato-e', // yes
 ];
-
-export { ArtStyles };

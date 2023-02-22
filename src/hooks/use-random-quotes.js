@@ -6,7 +6,7 @@ import { useImageStore } from '@stores/images';
 /* hook for getting the current selected quote and generated image */
 export const useRandomQuotes = () => {
   const generatedQuotePairs = useRandomQuotesStore(state => state.randomQuotes);
-  const selectedIndex = useRandomQuotesStore(state => state.indexOfCurrent);
+  const selectedIndex = useRandomQuotesStore(state => state.selectedIndex);
 
   const quotes = useQuoteStore(state => state.quotes);
   const images = useImageStore(state => state.images);

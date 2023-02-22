@@ -1,27 +1,37 @@
-import Cursor from '@components/ui/cursor';
+import { Cursor } from '@components/ui/cursor';
 import RandomQuotePage from '@pages/random-quote';
 import { useTagsLoader } from '@stores/tags';
 import { useEffect } from 'react';
+import { useRandomQuotesStore } from '@stores/random-quotes';
 
 import '@styles/app.scss';
+import logo from '@/assets/images/rk-logo-animate.gif';
 
 function App() {
   const { isTagsLoaded, fetchTags } = useTagsLoader();
+  const randomQuotes = useRandomQuotesStore(state => state.randomQuotes);
+  const create = useRandomQuotesStore(state => state.create);
 
   useEffect(() => {
-    fetchTags();
+    const initialLoad = async () => {
+      await fetchTags();
+      create();
+    };
+    initialLoad();
   }, []);
 
-  const renderRandomQuotePage = () => {
-    if (isTagsLoaded) return <RandomQuotePage />;
-    else return <p>Loading Tags..</p>;
-  };
-
+  if (!isTagsLoaded || !randomQuotes.length)
+    return (
+      <div className="loading-screen">
+        <div className="content">
+          <img src={logo} alt="loading" />
+        </div>
+      </div>
+    );
   return (
     <div id="app">
       <Cursor />
-
-      {renderRandomQuotePage()}
+      <RandomQuotePage />
     </div>
   );
 }

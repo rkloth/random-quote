@@ -3,28 +3,14 @@
   --space-mono: 'Space Mono', monospace;
   --space-grotesk: 'Space Grotesk', sans-serif;
 
-  --border-radius: 9px;
-  --bezier: cubic-bezier(0.04, 1.8, 0.33, 1);
-  --bezier-2: cubic-bezier(0.04, 1, 0.33, 1);
-
-  --secondary: #111111;
-
-  --primary: #222222;
-  --primary-500: #232323;
-  --primary-600: #282828;
-  --primary-700: #3a3a3a;
-  --primary-800: #878787;
-  --primary-900: #b0b1b3;
+  --border-radius: 4px;
+  --bezier: cubic-bezier(0.04, 1, 0.33, 1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
-
-* {
-  cursor: none;
 }
 
 html,
@@ -37,8 +23,6 @@ body,
   color: white;
   width: 100vw;
   height: 100vh;
-
-  cursor: none;
 }
 
 $directions: (
@@ -68,5 +52,63 @@ $spaces: (
     .m#{$direction-key}-#{$space-key} {
       margin-#{$direction-value}: $space-value;
     }
+  }
+}
+
+p {
+  font-family: var(--inter);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2em;
+
+  color: rgba(white, 0.5);
+}
+
+h1 {
+  font-family: var(--space-grotesk);
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.2;
+
+  text-transform: uppercase;
+  color: white;
+}
+
+h2 {
+  font-family: var(--space-grotesk);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+
+  text-transform: uppercase;
+  color: white;
+}
+
+button {
+  font-family: var(--inter);
+  font-size: 1rem;
+  font-weight: 500;
+
+  width: fit-content;
+  padding: 0.65em 0.9em 0.7em 0.9em;
+
+  color: white;
+  background-color: rgba(white, 0.2);
+  border-radius: var(--border-radius);
+  border: none;
+
+  transition: background-color 0.5s var(--bezier);
+
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(white, 0.3);
+  }
+
+  p {
+    color: white;
+    font-weight: 500;
   }
 }
