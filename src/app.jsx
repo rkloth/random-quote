@@ -23,9 +23,7 @@ function App() {
   if (!isTagsLoaded || !randomQuotes.length)
     return (
       <div className="loading-screen">
-        <div className="content">
-          <img src={logo} alt="loading" />
-        </div>
+        <img src={logo} alt="loading" />
       </div>
     );
   return (

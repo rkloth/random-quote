@@ -20,7 +20,7 @@ export const NavigateCursor = ({ indexDelta }) => {
           ? `0${indexForPreview + 1}`
           : indexForPreview + 1}
 
-        <h2 style={{ fontSize: '1.2em', lineHeight: '0.6em' }}>
+        <h2 style={{ fontSize: '1.1em', lineHeight: '0.6em' }}>
           {indexDelta < 0 ? '←' : '→'}
         </h2>
       </div>
